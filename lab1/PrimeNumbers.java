@@ -1,20 +1,33 @@
 package lab1;
 
+import java.util.Scanner;
+
 public class PrimeNumbers {
 
-	public static boolean main(String[] args) {
-		
-		int n,i;
-	          
-	          if(n==1||n==0)return false;
-	   
-	         
-	          for(int i=2; i<n; i++){
-	            
-	                if(n%i==0)return false;
-	          }
-	        
-	          return true;
-	}
+	static  boolean isPrime(int num)
+    {
+        if(num<=1)
+        {
+            return false;
+        }
+       for(int i=2;i<num/2;i++)
+       {
+           if((num%i)==0)
+               return  false;
+       }
+       return true;
+    }
+	
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+        System.out.println("Enter a number ");
+        int number= sc.nextInt();
+        if(isPrime(number)) {
+            System.out.println(number + " is prime number");
+        }
+        else{
+            System.out.println(number + " is a non-prime number");
+        }
 
 }
+    }
